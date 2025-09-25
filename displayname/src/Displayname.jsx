@@ -16,43 +16,22 @@ const Displayname = () => {
             setError("");
         }
     }
-
-    const firstNameSubmit = (e) => {
-        if(e.target.value.length === 0){
-            setError("Please fill out this field");
-            setFullName("");
-        }else{
-            setFirstName(e.target.value);
-            setError("");
-        }
-    }
-
-    const lastNameSubmit = (e) => {
-        if(e.target.value.length === 0){
-            setError("Please fill out this field");
-            setFullName("");
-        }
-        else{
-            setLastName(e.target.value);
-            setError("");
-        };
-    }
+    
 
   return (
     <>
         <h1>Full Name Display</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor="firstname">First Name:</label>
-            <input type="text" id="firstname" value={firstName} onChange={firstNameSubmit} />
+            <input type="text" id="firstname" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
             <br />
             <label htmlFor="lastname">Last Name:</label>
-            <input type="text" id="lastname" value={lastName} onChange={lastNameSubmit} />
+            <input type="text" id="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
             <br />
             <button type="submit">Submit</button>
         </form>
-        {error && <p style={{color: 'red'}}>{error}</p>}
         {fullName && <p>Full Name: {firstName} {lastName}</p>}
-        
+                
     </>
     );
 };
