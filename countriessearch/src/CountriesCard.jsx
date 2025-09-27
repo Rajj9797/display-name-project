@@ -43,25 +43,25 @@ const CountriesCard = () => {
 
     return (
         <div>
-            <div className={styles.searchbar}>
                 <input 
                     placeholder="Search for countries..." 
                     className={styles.search}
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
+                    // className={styles.searchbar}
+                    data-testid="country-search-input"
                 />
-            </div>
 
             <div className={styles.cardcontainer}>
                 {filteredCountries.length > 0 ? (
                     filteredCountries.map((country) => (
-                        <div key={country.common} className={styles.countryCard}>
+                        <div key={country.common} className={styles.countryCard} data-testid="countryCard">
                             <img src={country.png} alt={`${country.common} flag`} className={styles.flag} />
                             <h5>{country.common}</h5>
                         </div>
                     ))
                 ) : (
-                    <p>No countries found.</p>
+                    <p data-testid="no-results"></p> 
                 )}
             </div>
         </div>
