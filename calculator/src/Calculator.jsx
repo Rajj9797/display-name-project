@@ -9,7 +9,7 @@ const Calculator = () => {
 
     return (
         <>
-            <h1>React Calculator</h1>
+            <h1 className={styles.heading}>React Calculator</h1>
             <table className={styles.table}>
                 <tr className={styles.row}>
                     <input type="number" />
