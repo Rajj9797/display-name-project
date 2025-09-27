@@ -43,6 +43,8 @@ const CountriesCard = () => {
 
     return (
         <div>
+            <div className={styles.searchbar}>
+
                 <input 
                     placeholder="Search for countries..." 
                     className={styles.search}
@@ -51,6 +53,7 @@ const CountriesCard = () => {
                     // className={styles.searchbar}
                     data-testid="country-search-input"
                 />
+            </div>
 
             <div className={styles.cardcontainer}>
                 {filteredCountries.length > 0 ? (
