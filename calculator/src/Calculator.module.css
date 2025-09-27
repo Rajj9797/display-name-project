@@ -7,15 +7,11 @@
     font-size: 20px;
 }
 
-.table {
+
+
+.buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    
-}
-
-.row {
-    display: flex;
     justify-content: center;
     align-items: center;
     
